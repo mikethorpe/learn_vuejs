@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <div v-for="item in toDoItems" v-bind:key="item.id">
-            <TodoItem v-bind:itemText="item"/>
-        </div>
+<div>
+    <h3>To do list:</h3>
+    <ul>
+        <TodoItem v-for="item in toDoItems" v-bind:key="item.id" v-bind:item="item"/>
+    </ul>
+
 </div>
 </template>
 
