@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <p>Vue sandbox</p>
-  <ToDoList v-bind:toDoItems="toDoItems"/>
+  <ToDoList v-bind:toDoItems="toDoItems" v-on:add-clicked="addClicked"/>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
           { id: 2, itemText: 'To do 2', done: true }
         ]
       }
+  },
+  methods: {
+    addClicked(itemText) {
+      this.toDoItems = [ ...this.toDoItems, { itemText: itemText, done: false}]
+    }
   }
 }
 </script>
